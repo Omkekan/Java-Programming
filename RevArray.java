@@ -11,6 +11,7 @@ public class RevArray {
         for(int i = 0; i< num; i++){
             Arr[i] = sc.nextInt();
         }
+        sc.close();
 
         int left = 0, right = num - 1;
         while (left< right) {
