@@ -24,5 +24,6 @@ public class MvZerotoend {
             sb.append(arr[i]);
         }
         System.out.println(sb);
+        sc.close();
 }
 }

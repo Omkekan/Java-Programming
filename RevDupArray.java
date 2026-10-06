@@ -25,4 +25,6 @@ public class RevDupArray {
             sb.append(arr[i]);
         }
         System.out.println(sb);
+        sc.close();
+}
 }

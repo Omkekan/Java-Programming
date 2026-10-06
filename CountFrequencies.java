@@ -18,5 +18,6 @@ public class CountFrequencies {
         for (Map.Entry<Integer, Integer> e : freq.entrySet()) {
             System.out.println(e.getKey() + " -> " + e.getValue());
         }
+        sc.close();
     }
 }
