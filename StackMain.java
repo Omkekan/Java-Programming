@@ -16,7 +16,7 @@ public class StackMain {
         size = sc.nextInt();
 
         // Create the stack
-        // TODO: Call createStack() method
+        
         s.createStack(size);
 
         do {
@@ -56,7 +56,7 @@ public class StackMain {
 
                 case 2:
                     // POP
-                    // TODO:
+                
                     // Before popping, check whether stack is empty
                     //
                     if (s.is_empty())
@@ -74,7 +74,7 @@ public class StackMain {
 
                 case 3:
                     // PEEK
-                    // TODO:
+                
                     // Check whether stack is empty
                     //
                     if (s.is_empty())
@@ -92,7 +92,7 @@ public class StackMain {
 
                 case 4:
                     // PRINT STACK
-                    // TODO:
+                  
                     // Check whether stack is empty
                     //
                     if (s.is_empty())
