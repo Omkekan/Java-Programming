@@ -120,7 +120,7 @@ class TwoQueues
 }
 
 
-public class Main
+public class TwoQueues
 {
     public static void main(String args[])
     {
