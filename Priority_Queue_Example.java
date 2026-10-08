@@ -10,6 +10,21 @@ class Student
         this.name = name;
         this.marks = marks;
     }
+
+    public Student() {
+        //TODO Auto-generated constructor stub
+    }
+
+    public void InputFunc(String name2, int rollno, String gender, int marks1, int marks2, int marks3, int marks4,
+            int marks5) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'InputFunc'");
+    }
+
+    public void display_Human() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'display_Human'");
+    }
 }
 
 public class Priority_Queue_Example
