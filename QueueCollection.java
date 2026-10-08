@@ -55,7 +55,7 @@ public class QueueCollection {
                     break;
 
                 case 0:
-                    System.out.print("\nExiting... coded by Amar Career Credentials\n");
+                    System.out.print("\nExiting... \n");
                     break;
 
                 default:
