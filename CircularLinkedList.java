@@ -1,17 +1,19 @@
 public class CircularLinkedList {
 
 
-    Node root;//Only Node, which you know and you will record
+    Node root, lastNode;//Only Node, which you know and you will record
     //insert left
     void insert_left(int data)
     {
         Node n=new Node(data);
         if(root==null)//on first
-            root=n;
+           {lastNode=root=n;
+            lastNode.next=root;}
         else
         {
             n.next=root;//1
             root=n;//2
+            lastNode.next=root;
         }
     }
     //insert right
@@ -19,26 +21,37 @@ public class CircularLinkedList {
     {
         Node n=new Node(data);
         if(root==null)//on first
-            root=n;
+           { lastNode=root=n;}
         else
         {
-            Node t=root;//1:assign t to root address
-            while(t.next!=null)//2:go till end
-                t=t.next;//step
-            t.next=n;//3:connect
+            lastNode.next=n;
+            lastNode=n;
+
         }
+        lastNode.next=root;
     }
 
     //    delete left
-    void delete_left()
-    {
-        if(root==null)//on first
+    void delete_left() {
+        // Case 1: The list is completely empty
+        if (root == null) {
             System.out.print("\nEmpty list");
-        else
-        {
-            Node t=root;//1
-            root=root.next;//2
-            System.out.print("\nDeleted:"+t.data);
+        } 
+        // Case 2: There is only ONE node in the list
+        else if (root == lastNode) {
+            System.out.print("\nDeleted: " + root.data);
+            root = null;
+            lastNode = null; // The list is now empty
+        } 
+        // Case 3: There are MULTIPLE nodes in the list
+        else {
+            System.out.print("\nDeleted: " + root.data);
+            
+            // 1. Move root forward to the second node
+            root = root.next; 
+            
+            // 2. Re-connect the last node to the new root to maintain the circle
+            lastNode.next = root; 
         }
     }
     //delete right
@@ -48,21 +61,20 @@ public class CircularLinkedList {
             System.out.print("\nEmpty list");
         else
         {
-            Node t2=root;//1
             Node t=root;//1
 
-            while(t.next!=null)//2
-            {
-                t2=t;//tail method as we can not go back we would wait 1 step back
-                t=t.next;
+            if (root==lastNode) {
+             root=lastNode=null;
+            System.out.print("\nEmpty list");}
+            
+            else{
+                root=root.next;
+                lastNode.next=root;
             }
-            if(root.next==null)//single node
-                root=null;//self delete
-            else
-                t2.next=null;//use tail to delete second last to last connectivity
             System.out.print("\nDeleted:"+t.data);
         }
     }
+    
     void print_list()
     {
         if(root==null)//on first
@@ -71,11 +83,11 @@ public class CircularLinkedList {
         {
             Node t=root;//1
             System.out.print("Element are\n");
-            while(t!=null)//2
+            do
             {
                 System.out.print("|"+ t.data+"|->");
                 t=t.next;
-            }
+            }while(t!=root);//2
             System.out.print("null");
         }
 
