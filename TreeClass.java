@@ -77,6 +77,26 @@ public class TreeClass {
             return leaf_node(r.left) + leaf_node(r.right);
         }      
     }
+
+    int Length_Tree(Node r){
+        if (r == null) {
+        return 0;
+        } 
+        else {
+            // Find the length of the left and right subtrees
+            int leftLength = Length_Tree(r.left);
+            int rightLength = Length_Tree(r.right);
+            
+            // Compare them manually and return 1 + the larger number
+            if (leftLength > rightLength) {
+                return 1 + leftLength;
+            } else {
+                return 1 + rightLength;
+            }
+            //or other than this if else block we can use math function
+            //return 1+Math.max(leftLength,rightLength);
+        }
+    }
     
 
     public static void main(String[] args) {
@@ -97,5 +117,7 @@ public class TreeClass {
         System.out.print("\nTotal nodes: " + totalNodes);
         int leafNodes = obj.leaf_node(obj.root);
         System.out.print("\nTotal Leaf nodes: " + leafNodes);
+        int Length_Tree = obj.Length_Tree(obj.root);
+        System.out.print("\nDepth of tree: " + Length_Tree);
     }
 }
