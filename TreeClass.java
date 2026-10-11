@@ -1,5 +1,4 @@
 public class TreeClass {
-
     
     public static class Node {
         int data;
@@ -23,8 +22,7 @@ public class TreeClass {
                     r.left = n;
                 else
                     insert(r.left, n);
-            } 
-            else // go to right
+            }else // go to right
             {
                 if (r.right == null)
                     r.right = n;
