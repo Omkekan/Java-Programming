@@ -108,6 +108,24 @@ public class Linear_Linked_List {
         }
     }
 
+    void reverse(){
+        int[] stack = new int[100];
+        int tos = -1;
+
+        Node t = root;
+        while (t !=null) {
+            stack[++tos] = t.data;
+            t = t.next;
+        }
+
+        System.out.print("\nElements in reverse are: \n");
+        while (tos >= 0) {
+            System.out.print("|" + stack[tos--] + "->");
+        }
+        System.out.print("null\n");
+
+    }
+
     void delete_element(int element) {
         if (root == null) 
             System.out.print("\nEmpty list");

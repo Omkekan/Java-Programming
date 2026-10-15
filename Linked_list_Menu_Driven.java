@@ -17,6 +17,7 @@ public class Linked_list_Menu_Driven {
             System.out.print("\n3. Deleting specific element");
             System.out.print("\n4. Searching element");
             System.out.print("\n5. Printing Linked list");
+            System.out.print("\n6. Printing Linked list in reverse");
             System.out.print("\n0. Exit");
             System.out.print("\nEnter choice: ");
  
@@ -55,6 +56,10 @@ public class Linked_list_Menu_Driven {
                     
                 case 5:
                     obj.print_list();
+                    break;
+                
+                case 6:
+                    obj.reverse();;
                     break;
                     
                 case 0:
